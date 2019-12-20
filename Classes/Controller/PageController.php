@@ -51,6 +51,7 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
             $filterVariables['maxentries'] = $this->backendConfiguration['defaultMaxEntries'];
             $filterVariables['orderby'] = $this->backendConfiguration['defaultOrderBy'];
             $filterVariables['order'] = $this->backendConfiguration['defaultOrder'];
+            $filterVariables['status'] = $this->backendConfiguration['defaultStatus'];
             $filterVariables['key'] = '';
         }
 
@@ -85,7 +86,11 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
             ['value' => '200', 'label' => '200'],
             ['value' => '300', 'label' => '300'],
             ['value' => '400', 'label' => '400'],
-            ['value' => '500', 'label' => '500']
+            ['value' => '500', 'label' => '500'],
+            ['value' => '1000', 'label' => '1000 (be careful!)'],
+            ['value' => '1500', 'label' => '1500'],
+            ['value' => '2000', 'label' => '2000'],
+            ['value' => '3000', 'label' => '3000']
         ];
 
         $this->view->assignMultiple([
@@ -153,37 +158,6 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
         else{
             $this->addFlashMessage('Error: No Site root found! PageController.php Line 130');
         }
-
-    }
-
-
-    protected function seoAction(){
-
-        $currentPageUid = (int)\TYPO3\CMS\Core\Utility\GeneralUtility::_GP('id');
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
-        $queryBuilder
-           ->getRestrictions()
-           ->removeAll()
-           ->add(GeneralUtility::makeInstance(DeletedRestriction::class));
-        $statement = $queryBuilder
-           ->select('*')
-           ->from('pages')
-           ->setMaxResults(1)
-           ->where(
-              $queryBuilder->expr()->eq('uid', $queryBuilder->createNamedParameter($currentPageUid, \PDO::PARAM_INT))
-           )
-           ->execute();
-
-        $row = $statement->fetch();
-
-        $this->view->assignMultiple([
-            'backendConfiguration' => $this->backendConfiguration,
-            'extEmconf' => $this->helper->getEmConfiguration('slug'),
-            'sites' => (array) $this->sites,
-            'args' => $args,
-            'pageUid' => $currentPageUid,
-            'page' => $row
-        ]);
 
     }
 

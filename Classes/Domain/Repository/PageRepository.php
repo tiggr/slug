@@ -4,6 +4,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\DataHandling\SlugHelper;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Exception\SiteNotFoundException;
+use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
 
 /*
  * This file was created by Simon Köhler
@@ -19,16 +20,52 @@ class PageRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
     public function findAllFiltered($filterVariables) {
         $this->languages = $this->getLanguages();
         $queryBuilder = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Database\ConnectionPool::class)->getQueryBuilderForTable('pages');
+        $queryBuilder
+           ->getRestrictions()
+           ->removeAll();
+
         $query = $queryBuilder
             ->select('*')
             ->from('pages')
             ->orderBy($filterVariables['orderby'],$filterVariables['order']);
 
+        switch ($filterVariables['status']) {
+
+            // All pages
+            case 'all':
+                // simply add nothing to the query...
+            break;
+
+            // Only hidden
+            case 'hidden':
+                $query->andWhere(
+                    $queryBuilder->expr()->eq('hidden', 1),
+                    $queryBuilder->expr()->eq('deleted', 0)
+                );
+            break;
+
+            // Only deleted
+            case 'deleted':
+                $query->where(
+                    $queryBuilder->expr()->eq('deleted', 1)
+                );
+            break;
+
+            // Only visible pages (default)
+            default:
+                $query->where(
+                    $queryBuilder->expr()->eq('hidden', 0),
+                    $queryBuilder->expr()->eq('deleted', 0)
+                );
+            break;
+        }
+
         if($filterVariables['key']){
-            $query->where(
+            $query->andWhere(
                 $queryBuilder->expr()->like('slug',$queryBuilder->createNamedParameter('%' . $queryBuilder->escapeLikeWildcards($filterVariables['key']) . '%'))
             );
         }
+
         $sitefinder = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(SiteFinder::class);
         $statement = $query->execute();
         $output = array();
