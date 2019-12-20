@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.0.3] - 2019-12-20
+- Composer settings changed
+- 
+
 ## [2.0.2] - 2019-12-20
 - New Icon for the backend module
 - Compatibility checked with TYPO3 10.2.0

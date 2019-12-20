@@ -17,13 +17,17 @@
                 <h6>{f:translate(key:'filter.form.label.entries_per_page', extensionName: slug)}</h6>
                 <f:form.select value="{filter.maxentries}" name="filter[maxentries]" options="{filterOptions.maxentries}" optionValueField="value" optionLabelField="label" class="form-control"/>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <h6>{f:translate(key:'filter.form.label.order_by', extensionName: slug)}</h6>
                 <f:form.select value="{filter.orderby}" name="filter[orderby]" options="{filterOptions.orderby}" optionValueField="value" optionLabelField="label" class="form-control"/>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-1">
                 <h6>{f:translate(key:'filter.form.label.order', extensionName: slug)}</h6>
                 <f:form.select value="{filter.order}" name="filter[order]" options="{filterOptions.order}" optionValueField="value" optionLabelField="label" class="form-control"/>
+            </div>
+            <div class="col-sm-2 text-center">
+                <h6>{f:translate(key:'filter.form.label.showhidden', extensionName: slug)}</h6>
+                <f:form.checkbox name="filter[showhidden]" value="{filter.showhidden}" class="form-control"/>
             </div>
             <div class="col-sm-2">
                 <h6>{f:translate(key:'filter.form.label.action', extensionName: slug)}</h6>
