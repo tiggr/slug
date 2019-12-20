@@ -72,6 +72,9 @@ module.tx_slug {
 
 ## KNOWN PROBLEMS
 
+### Oops, an error occured!: Invalid configuration: "vendorName" is not set
+This happens, when you try to use the extension with version 3.0.0 or higher, in a TYPO3 version 9.5 or lower version. Please make sure to use slug v2.0.2 when using TYPO3 version 9!
+
 ### Uncaught TYPO3 Exception: #1278450972: Class SIMONKOEHLER\Slug\Controller\PageController does not exist. Reflection failed.
 This exception occurs after upgrading the extension from 2.0.0 to 2.0.xx because the most important namespaces in the extbase PHP code have changed. Therefore, it is essential to clear the system's main cache and autoload data.
 
