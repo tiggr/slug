@@ -1,9 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [2.0.3] - 2019-12-20
+## [3.0.0] - 2019-12-20
 - Composer settings changed
-- 
+- Backend interface design optimized
+- New Feature: The pages list now shows hidden and even deleted pages. Those can not be edited yet, because the TYPO3 internal classes for generating slugs cause problems when pages are not in any tree root.
+- New Feature: You can define a custom label field for page records in the extension setup
 
 ## [2.0.2] - 2019-12-20
 - New Icon for the backend module
