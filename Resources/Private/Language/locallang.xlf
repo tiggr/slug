@@ -35,7 +35,7 @@
 			</trans-unit>
 
 
-                        <trans-unit id="button.save.title">
+            <trans-unit id="button.save.title">
 				<source>Save slug</source>
 			</trans-unit>
                         <trans-unit id="button.refresh.label">
@@ -116,23 +116,26 @@
 			</trans-unit>
 
 
-                        <trans-unit id="filter.form.label.search_key">
+            <trans-unit id="filter.form.label.search_key">
 				<source>Find slugs by keyword/s</source>
 			</trans-unit>
-                        <trans-unit id="filter.form.label.entries_per_page">
+            <trans-unit id="filter.form.label.entries_per_page">
 				<source>Entries per page</source>
 			</trans-unit>
-                        <trans-unit id="filter.form.label.order_by">
+            <trans-unit id="filter.form.label.order_by">
 				<source>Order by field</source>
 			</trans-unit>
-                        <trans-unit id="filter.form.label.order">
+            <trans-unit id="filter.form.label.order">
 				<source>Order</source>
 			</trans-unit>
-                        <trans-unit id="filter.form.label.action">
+            <trans-unit id="filter.form.label.action">
 				<source>Action</source>
 			</trans-unit>
+			<trans-unit id="filter.form.label.status">
+				<source>Status</source>
+			</trans-unit>
 
-                        <trans-unit id="filter.form.select.option.creation_date">
+            <trans-unit id="filter.form.select.option.creation_date">
 				<source>Creation Date</source>
 			</trans-unit>
                         <trans-unit id="filter.form.select.option.tstamp">

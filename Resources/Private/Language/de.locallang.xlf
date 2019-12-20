@@ -3,7 +3,7 @@
 	<file target-language="de" source-language="en" datatype="plaintext" original="messages" date="2018-11-24T09:35:38Z" product-name="slug">
 		<header/>
 		<body>
-			
+
 
                         <trans-unit id="ext.title">
 				<target>Slug</target>
@@ -14,8 +14,8 @@
 			<trans-unit id="ext.note">
 				<target><![CDATA[<p>Diese Erweiterung befindet sich im BETA-Modus. Sie funktioniert, aber seien Sie vorsichtig, was Sie tun. Sie haben jetzt die Möglichkeit, alle Seiten-Slugs direkt zu bearbeiten!</p>]]></target>
 			</trans-unit>
-                        
-                        
+
+
 			<trans-unit id="table.head.uid">
 				<target>Uid</target>
 			</trans-unit>
@@ -34,8 +34,8 @@
                         <trans-unit id="table.head.actions">
 				<target>Aktionen</target>
 			</trans-unit>
-                        
-                        
+
+
                         <trans-unit id="button.save.title">
 				<target>Slug speichern</target>
 			</trans-unit>
@@ -75,8 +75,8 @@
                         <trans-unit id="button.news">
 				<target>News</target>
 			</trans-unit>
-                        
-                        
+
+
                         <trans-unit id="siteselect.options.others">
 				<target>Andere Seiten im Root-Verzeichnis (Hinweis: Kommt mit der nächsten Version)</target>
 			</trans-unit>
@@ -86,8 +86,8 @@
                         <trans-unit id="siteselect.labels.language">
 				<target>Sprache:</target>
 			</trans-unit>
-                        
-                        
+
+
                         <trans-unit id="notes.success.saved">
 				<target>Erfolgreich gespeichert</target>
 			</trans-unit>
@@ -109,24 +109,27 @@
                         <trans-unit id="notes.error.ajax">
 				<target>Mit jQuery und Ajax ist ein Fehler aufgetreten, siehe Skriptausgabe: </target>
 			</trans-unit>
-                        
-                        
-                        <trans-unit id="filter.form.label.search_key">
+
+
+            <trans-unit id="filter.form.label.search_key">
 				<target>Suche nach Keyword/s in Slugs</target>
 			</trans-unit>
-                        <trans-unit id="filter.form.label.entries_per_page">
+            <trans-unit id="filter.form.label.entries_per_page">
 				<target>Einträge pro Seite</target>
 			</trans-unit>
-                        <trans-unit id="filter.form.label.order_by">
+            <trans-unit id="filter.form.label.order_by">
 				<target>Nach Feld sortieren</target>
 			</trans-unit>
-                        <trans-unit id="filter.form.label.order">
+            <trans-unit id="filter.form.label.order">
 				<target>Sortierung</target>
 			</trans-unit>
-                        <trans-unit id="filter.form.label.action">
+			<trans-unit id="filter.form.label.status">
+				<target>Status</target>
+			</trans-unit>
+            <trans-unit id="filter.form.label.action">
 				<target>Aktion</target>
 			</trans-unit>
-                        
+
                         <trans-unit id="filter.form.select.option.creation_date">
 				<target>Erstellungsdatum</target>
 			</trans-unit>
@@ -157,21 +160,21 @@
                         <trans-unit id="filter.form.select.option.ascending">
 				<target>Aufsteigend</target>
 			</trans-unit>
-                        
-                    
+
+
 			<trans-unit id="tx_slug_domain_model_page">
 				<target>Seite</target>
 			</trans-unit>
 			<trans-unit id="tx_slug_domain_model_page.slug_lock">
 				<target>Slug sperren</target>
 			</trans-unit>
-                        
-                        
+
+
                         <trans-unit id="recordinfo.no_info_available">
 				<target>Für diesen Datensatz stehen derzeit keine Informationen zur Verfügung</target>
 			</trans-unit>
-                    
-                    
+
+
 		</body>
 	</file>
 </xliff>

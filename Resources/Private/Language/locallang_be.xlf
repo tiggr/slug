@@ -12,8 +12,14 @@
 			<trans-unit id="default.order">
 				<source>Default order</source>
 			</trans-unit>
+			<trans-unit id="default.status">
+				<source>Default status</source>
+			</trans-unit>
 			<trans-unit id="default.recordInfoEnabled">
 				<source>Enable additional record information</source>
+			</trans-unit>
+			<trans-unit id="default.pageLabelField">
+				<source>Wich field do you want to display in the pages list table?</source>
 			</trans-unit>
 
 

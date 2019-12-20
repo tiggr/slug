@@ -3,7 +3,7 @@
 	<file target-language="es" source-language="en" datatype="plaintext" original="messages" date="2018-11-24T09:35:38Z" product-name="slug">
 		<header/>
 		<body>
-			
+
 
                         <trans-unit id="ext.title">
 				<target>Slug</target>
@@ -14,8 +14,8 @@
 			<trans-unit id="ext.note">
 				<target><![CDATA[<p>Esta extensión está en modo BETA. Funciona, pero ten cuidado con lo que haces. Ahora tiene la opción de editar todas las "slugs" de página directamente!</p>]]></target>
 			</trans-unit>
-                        
-                        
+
+
 			<trans-unit id="table.head.uid">
 				<target>Uid</target>
 			</trans-unit>
@@ -34,8 +34,8 @@
                         <trans-unit id="table.head.actions">
 				<target>Acciones</target>
 			</trans-unit>
-                        
-                        
+
+
                         <trans-unit id="button.save.title">
 				<target>Guardar Slug</target>
 			</trans-unit>
@@ -75,8 +75,8 @@
                         <trans-unit id="button.news">
 				<target>News</target>
 			</trans-unit>
-                        
-                        
+
+
                         <trans-unit id="siteselect.options.others">
 				<target>Otras páginas en el directorio raíz (Nota: viene con la próxima versión)</target>
 			</trans-unit>
@@ -86,8 +86,8 @@
                         <trans-unit id="siteselect.labels.language">
 				<target>Idioma:</target>
 			</trans-unit>
-                        
-                        
+
+
                         <trans-unit id="notes.success.saved">
 				<target>Guardado exitosamente</target>
 			</trans-unit>
@@ -109,8 +109,8 @@
                         <trans-unit id="notes.error.ajax">
 				<target>Se ha producido un error con jQuery y Ajax, consulte Salida de script: </target>
 			</trans-unit>
-                        
-                        
+
+
                         <trans-unit id="filter.form.label.search_key">
 				<target>Buscar Slugs para palabras clave</target>
 			</trans-unit>
@@ -123,10 +123,13 @@
                         <trans-unit id="filter.form.label.order">
 				<target>Orden</target>
 			</trans-unit>
+			<trans-unit id="filter.form.label.status">
+				<target>Estatus</target>
+			</trans-unit>
                         <trans-unit id="filter.form.label.action">
 				<target>Acción</target>
 			</trans-unit>
-                        
+
                         <trans-unit id="filter.form.select.option.creation_date">
 				<target>Fecha de creación</target>
 			</trans-unit>
@@ -154,21 +157,21 @@
                         <trans-unit id="filter.form.select.option.ascending">
 				<target>Ascendente</target>
 			</trans-unit>
-                        
-                    
+
+
 			<trans-unit id="tx_slug_domain_model_page">
 				<target>Página</target>
 			</trans-unit>
 			<trans-unit id="tx_slug_domain_model_page.slug_lock">
 				<target>Cerrar Slug</target>
 			</trans-unit>
-                        
-                        
+
+
                         <trans-unit id="recordinfo.no_info_available">
 				<target>Actualmente no hay información disponible para este registro.</target>
 			</trans-unit>
-                    
-                    
+
+
 		</body>
 	</file>
 </xliff>
