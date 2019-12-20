@@ -2,14 +2,52 @@ $green: green;
 $blue: steelblue;
 $gray: #999;
 
+*{
+    border-radius: 0 !important;
+}
+
+#typo3-inner-docbody{
+    padding: 0;
+}
+
 div#typo3-docbody{
     top: 0px;
 }
 
-#globalHeader{
-    border-bottom: 1px dashed #ccc;
+#slug-header{
     margin-bottom: 1.4rem;
-    padding-bottom: 1rem;
+    background-color: #292929;
+    color: white;
+    padding: 2rem 2rem 0 2rem;
+}
+
+#slug-filter-list{
+    padding: 0 4rem;
+}
+
+#slug-list-wrap{
+    padding: 0 2rem;
+    tr.deleted{
+        transition: all 0.1s ease-in-out;
+        opacity: 0.6;
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+
+#slug-footer{
+    background-color: #292929;
+    color: white;
+    padding: 1.5rem 2rem;
+    color: white;
+    a{
+        color: #ccc;
+    }
+}
+
+#slug-tree-module{
+    padding: 2rem 2rem 2rem 2rem;
 }
 
 tr.rootpage{
@@ -19,23 +57,6 @@ tr.rootpage{
 
 input.has-been-changed{
     background-color: lighten(lightcyan,2%);
-}
-
-.slug-list-table{
-    td.page-title{
-        max-width: 340px;
-    }
-    tr.level-2{
-        td.page-title{
-           padding-left: 30px;
-        }
-    }
-
-    tr.level-3{
-        td.page-title{
-           padding-left: 60px;
-        }
-    }
 }
 
 td.slug-input{
@@ -63,7 +84,7 @@ td.slug-input{
     clear: both;
     display: block;
     margin: 0;
-    padding: 0;
+    padding: 0 3rem;
     li{
         display: inline-block;
         padding: 10px 15px;
