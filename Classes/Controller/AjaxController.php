@@ -32,6 +32,7 @@ class AjaxController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
         $this->helper = GeneralUtility::makeInstance(HelperUtility::class);
         $slug = $this->helper->returnUniqueSlug('page', $queryParams['slug'], $queryParams['uid'], 'pages', 'slug');
+        $queryBuilder->getRestrictions()->removeAll();
         $statement = $queryBuilder
             ->update('pages')
             ->where(
@@ -64,6 +65,7 @@ class AjaxController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
         $slug = $queryParams['slug'];
         $slugField  = $queryParams['slugField'];
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
+        $queryBuilder->getRestrictions()->removeAll();
         $statement = $queryBuilder
             ->update($table)
             ->where(
@@ -85,6 +87,7 @@ class AjaxController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
     {
         $queryParams = $request->getQueryParams();
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
+        $queryBuilder->getRestrictions()->removeAll();
         $result = $queryBuilder
             ->count('slug')
             ->from('pages')
@@ -108,6 +111,7 @@ class AjaxController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
         $this->helper = GeneralUtility::makeInstance(HelperUtility::class);
         $queryParams = $request->getQueryParams();
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
+        $queryBuilder->getRestrictions()->removeAll();
         $statement = $queryBuilder
             ->select('*')
             ->from('pages')
@@ -143,6 +147,7 @@ class AjaxController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
         $this->helper = GeneralUtility::makeInstance(HelperUtility::class);
 
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
+        $queryBuilder->getRestrictions()->removeAll();
         $statement = $queryBuilder
             ->select('*')
             ->from($table)
