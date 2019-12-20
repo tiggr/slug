@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.0.2] - 2019-12-20
+- New Icon for the backend module
+- Compatibility checked with TYPO3 10.2.0
+
 ## [2.0.1] - 2019-07-27
 - Added new option to custom records: By setting "pid=" only records from the related parent page will be shown
 - BUGFIX: Fixed bug in TCA fields, thanks to @Teddytrombone on Github
