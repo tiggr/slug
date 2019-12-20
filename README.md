@@ -37,6 +37,7 @@ https://github.com/koehlersimon/slug/blob/master/CHANGELOG.md
 
 ### Installation
 
+* For Composer use ```composer require koehlersimon/slug```
 * Download the latest version here: https://extensions.typo3.org/extension/slug/ or install it with the extension manager of your TYPO3 installation
 * No further configuration is required, but you should delete all the backend caches after installation to make sure the extension is working properly.
 
