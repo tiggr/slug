@@ -5,6 +5,12 @@ Official Repository of the 'slug' Backend Module for TYPO3 9.5 and 10.2.0
 
 The Slug backend module is designed to help manage large amounts of slugs for pages and extension records. Currently, it provides a simple list for pages and custom records, which can be filtered with different parameters. Slugs can be edited and saved quickly and efficiently. The modules regenerate or save **all slugs of the current list view** with just one click. I have tested the functionality with 500 empty news records so far, without any problem.
 
+## IMPORTANT NOTE!
+
+The current version 3.0.0 is in BETA status and ONLY for TYPO3 version 10.2. or higher!
+If you want to use it with TYPO3 9, please download an older version here:
+https://github.com/koehlersimon/slug/releases/tag/v2.0.2
+
 ## INTRODUCTION
 
 Please use the latest version from the official TYPO3 repository (https://extensions.typo3.org/extension/slug/), if you want to make sure that nothing happens to your website. In any case I highly recommend a database backup if you want to work in a live website!!! If you use the current version from github, you use it at your own risk!
