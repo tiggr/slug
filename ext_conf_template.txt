@@ -10,8 +10,14 @@ defaultOrderBy = crdate
 # cat=defaults; type=options[DESC,ASC]; label=LLL:EXT:slug/Resources/Private/Language/locallang_be.xlf:default.order
 defaultOrder = DESC
 
+# cat=defaults; type=options[visible,all,hidden,deleted]; label=LLL:EXT:slug/Resources/Private/Language/locallang_be.xlf:default.status
+defaultStatus = visible
+
 # cat=defaults; type=boolean; label=LLL:EXT:slug/Resources/Private/Language/locallang_be.xlf:default.recordInfoEnabled
 recordInfoEnabled = 1
+
+# cat=defaults; type=options[title,seo_title,nav_title]; label=LLL:EXT:slug/Resources/Private/Language/locallang_be.xlf:default.pageLabelField
+pageLabelField = title
 
 
 # cat=tree; type=boolean; label=LLL:EXT:slug/Resources/Private/Language/locallang_be.xlf:tree.enabled
