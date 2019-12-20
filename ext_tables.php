@@ -33,25 +33,6 @@ call_user_func(
                 ]
             );
 
-            if ($slugConfiguration['seoModuleEnabled']) {
-
-                // Module for single page slug editing
-                \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
-                    'SIMONKOEHLER.Slug',
-                    'web',
-                    'slugs',
-                    '',
-                    [
-                        'Page' => 'seo',
-                    ],
-                    [
-                        'access' => 'user,group',
-                        'icon'   => 'EXT:slug/Resources/Public/Icons/slug-be-module.png',
-                        'labels' => 'LLL:EXT:slug/Resources/Private/Language/locallang_slug_seo.xlf',
-                    ]
-                );
-
-            }
 
         }
 
