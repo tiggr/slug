@@ -14,7 +14,7 @@ call_user_func(
                 \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
             );
             $slugConfiguration = $extensionConfiguration->get('slug');
-            
+
 
             // The main site module for slug editing
             \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
@@ -28,7 +28,7 @@ call_user_func(
                 ],
                 [
                     'access' => 'user,group',
-                    'icon'   => 'EXT:slug/Resources/Public/Icons/slug-be-module.png',
+                    'icon'   => 'EXT:slug/Resources/Public/Icons/slug-be-module.svg',
                     'labels' => 'LLL:EXT:slug/Resources/Private/Language/locallang_slugs.xlf',
                 ]
             );
