@@ -1,5 +1,5 @@
-# TYPO3 Backend Module 'slug'
-Official Repository of the 'slug' Backend Module for TYPO3 9.5
+# TYPO3 Backend Module 'slug' v.3.0.0 beta
+Official Repository of the 'slug' Backend Module for TYPO3 9.5 and 10.2.0
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/typo3freelancer/5)
 
@@ -11,14 +11,20 @@ Please use the latest version from the official TYPO3 repository (https://extens
 
 ## FEATURES
 
-* NEW in version 2.0.1: List only custom records from a specific page or folder, by using the "pid" parameter
-* NEW in version 2: Add custom records of your extensions via TypoScript (see manual below)
+* NEW in v3.0.0: Show hidden and deleted records in the page list
+* List only custom records from a specific page or folder, by using the "pid" parameter
+* Add custom records of your extensions via TypoScript (see manual below)
 * Quickly edit, save and regenerate slugs for pages and other record types (new in Version 2)
 * Mass generation and storage of news slugs (up to 500 at once)
 * List views filterable with different parameters
 * Search engine entry Preview for pages, displays the updated slug as you type
 * Uses TYPO3 core slug generation functions
 * Extension configuration for default values like sorting, entries per page etc.
+
+## CHANGELOG
+
+See the changelog for more details:
+https://github.com/koehlersimon/slug/blob/master/CHANGELOG.md
 
 ## USAGE
 
