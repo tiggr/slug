@@ -10,7 +10,7 @@
 
 <f:if condition="{newsRecords}">
     <f:then>
-    
+
         <f:form id="filter-list" method="POST">
             <div class="row">
                 <div class="col-sm-3">
@@ -37,41 +37,47 @@
         </f:form>
 
         <f:widget.paginate objects="{newsRecords}" as="newsRecordsPaginated" configuration="{addQueryStringMethod: 'POST,GET', itemsPerPage: filter.maxentries, insertAbove: 1, maximumNumberOfLinks: 10}">
-            <table class="table table-hover">
-                <tr>
-                    <th colspan="2"><span class="badge badge-info record-count" title="Number of records in the current view"></span></th>
-                    <th colspan="2" style="text-align: right;">
-                        <div class="btn-group">
-                            <button class="btn btn-default saveAllNewsSlugs" title="{f:translate(key:'button.saveall.title', extensionName: slug)}">
-                                <i class="fa fa-save"></i> {f:translate(key:'button.saveall.label', extensionName: slug)}
-                            </button>
 
-                            <button class="btn btn-default generateAllNewsSlugs" title="{f:translate(key:'button.generateall.title', extensionName: slug)}">
-                                <i class="fa fa-refresh"></i> {f:translate(key:'button.generateall.label', extensionName: slug)}
-                            </button>
-                        </div>
-                    </th>
-                </tr>
-                <f:for each="{newsRecordsPaginated}" as="news">
+            <div id="slug-list-wrap">
+
+                <table class="table table-hover">
                     <tr>
-                        <td><f:image src="EXT:news/Resources/Public/Icons/news_domain_model_news.svg" height="18" title="id={news.uid}"/></td>
-                        <td><strong>{news.title}</strong></td>
-                        <td class="slug-input">
-                            <f:render partial="SlugInputNews" arguments="{news:news}"/>
-                        </td>
-                        <td nowrap>
+                        <th colspan="2"><span class="badge badge-info record-count" title="Number of records in the current view"></span></th>
+                        <th colspan="2" style="text-align: right;">
                             <div class="btn-group">
-                                <button data-uid="{news.uid}" id="saveNewsSlug-{news.uid}" class="btn btn-default saveNewsSlug" title="{f:translate(key:'button.save.title', extensionName: slug)}">
-                                    <i class="fa fa-save"></i>
+                                <button class="btn btn-default saveAllNewsSlugs" title="{f:translate(key:'button.saveall.title', extensionName: slug)}">
+                                    <i class="fa fa-save"></i> {f:translate(key:'button.saveall.label', extensionName: slug)}
                                 </button>
-                                <button data-uid="{news.uid}" id="generateNewsSlug-{news.uid}" class="btn btn-default generateNewsSlug" title="{f:translate(key:'button.generate.title', extensionName: slug)}">
-                                    <i class="fa fa-refresh"></i>
+
+                                <button class="btn btn-default generateAllNewsSlugs" title="{f:translate(key:'button.generateall.title', extensionName: slug)}">
+                                    <i class="fa fa-refresh"></i> {f:translate(key:'button.generateall.label', extensionName: slug)}
                                 </button>
                             </div>
-                        </td>
+                        </th>
                     </tr>
-                </f:for>
-            </table>
+                    <f:for each="{newsRecordsPaginated}" as="news">
+                        <tr>
+                            <td><f:image src="EXT:news/Resources/Public/Icons/news_domain_model_news.svg" height="18" title="id={news.uid}"/></td>
+                            <td><strong>{news.title}</strong></td>
+                            <td class="slug-input">
+                                <f:render partial="SlugInputNews" arguments="{news:news}"/>
+                            </td>
+                            <td nowrap>
+                                <div class="btn-group">
+                                    <button data-uid="{news.uid}" id="saveNewsSlug-{news.uid}" class="btn btn-default saveNewsSlug" title="{f:translate(key:'button.save.title', extensionName: slug)}">
+                                        <i class="fa fa-save"></i>
+                                    </button>
+                                    <button data-uid="{news.uid}" id="generateNewsSlug-{news.uid}" class="btn btn-default generateNewsSlug" title="{f:translate(key:'button.generate.title', extensionName: slug)}">
+                                        <i class="fa fa-refresh"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </f:for>
+                </table>
+
+            </div>
+
         </f:widget.paginate>
 
         <f:render partial="SlugNotes"/>
