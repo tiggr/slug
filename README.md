@@ -12,6 +12,7 @@ Please use the latest version from the official TYPO3 repository (https://extens
 ## FEATURES
 
 * NEW in v3.0.0: Show hidden and deleted records in the page list
+* NEW in v3.0.0: Display up to 3000 records at once. But handle with care ;-)
 * List only custom records from a specific page or folder, by using the "pid" parameter
 * Add custom records of your extensions via TypoScript (see manual below)
 * Quickly edit, save and regenerate slugs for pages and other record types (new in Version 2)

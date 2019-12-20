@@ -36,7 +36,9 @@
                 </div>
             </f:form>
 
-            <h3>{label} <small>{table}</small></h3>
+            <div class="header-wrap">
+                <h3>{label} <small>{table}</small></h3>
+            </div>
 
             <f:widget.paginate objects="{records}" as="recordsPaginated" configuration="{addQueryStringMethod: 'POST,GET', itemsPerPage: filter.maxentries, insertAbove: 1, maximumNumberOfLinks: 10}">
 
@@ -96,7 +98,7 @@
                     </table>
 
                 </div>
-                
+
             </f:widget.paginate>
 
             <f:render partial="SlugNotes"/>
