@@ -72,6 +72,9 @@ class PageRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
         while ($row = $statement->fetch()) {
 
+            $row['flag'] = $this->getFlagIconByLanguageUid($row['sys_language_uid']);
+            $row['isocode'] = $this->getIsoCodeByLanguageUid($row['sys_language_uid']);
+
             // If page is a translated page, set l10n_parent as PageUid
             if($row['l10n_parent'] > 0){
                 $pageUid = $row['l10n_parent'];
@@ -88,11 +91,16 @@ class PageRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
                 $row['site'] = $site;
                 $row['hasSite'] = true;
 
+                // Remove slash from base URL if neccessary
                 if(substr($siteConf['base'], -1) === "/"){
                     $row['pageurl'] = substr($siteConf['base'], 0, -1);
                 }
                 else{
                     $row['pageurl'] = $siteConf['base'];
+                }
+
+                if($row['isocode']){
+                    $row['pageurl'] = $row['pageurl'].'/'.$row['isocode'];
                 }
             }
             catch (SiteNotFoundException $e) {
@@ -100,8 +108,6 @@ class PageRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
                $row['pageurl'] = '(N/A)';
             }
 
-            $row['flag'] = $this->getFlagIconByLanguageUid($row['sys_language_uid']);
-            $row['isocode'] = $this->getIsoCodeByLanguageUid($row['sys_language_uid']);
             array_push($output, $row);
 
         }
