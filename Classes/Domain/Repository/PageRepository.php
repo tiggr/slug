@@ -69,17 +69,41 @@ class PageRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         $sitefinder = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(SiteFinder::class);
         $statement = $query->execute();
         $output = array();
+
         while ($row = $statement->fetch()) {
+
+            // If page is a translated page, set l10n_parent as PageUid
+            if($row['l10n_parent'] > 0){
+                $pageUid = $row['l10n_parent'];
+            }
+            else{
+                $pageUid = $row['uid'];
+            }
+
+            // Try to get the Site configuration
             try {
-                $site = $sitefinder->getSiteByPageId($row['uid']);
+                $site = $sitefinder->getSiteByPageId($pageUid);
+                $siteConf = $site->getConfiguration();
+
                 $row['site'] = $site;
                 $row['hasSite'] = true;
-            } catch (SiteNotFoundException $e) {
-               $row['hasSite'] = false;
+
+                if(substr($siteConf['base'], -1) === "/"){
+                    $row['pageurl'] = substr($siteConf['base'], 0, -1);
+                }
+                else{
+                    $row['pageurl'] = $siteConf['base'];
+                }
             }
+            catch (SiteNotFoundException $e) {
+               $row['hasSite'] = false;
+               $row['pageurl'] = '(N/A)';
+            }
+
             $row['flag'] = $this->getFlagIconByLanguageUid($row['sys_language_uid']);
             $row['isocode'] = $this->getIsoCodeByLanguageUid($row['sys_language_uid']);
             array_push($output, $row);
+
         }
         return $output;
     }
