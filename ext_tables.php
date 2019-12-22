@@ -15,9 +15,12 @@ call_user_func(
             );
             $slugConfiguration = $extensionConfiguration->get('slug');
 
+            print_r(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getExtensionVersion('sysext'));
 
-            // The main site module for slug editing
-            /*
+            /* Register main site module for slug editing
+            *  NOTE: This function has to be replaced with the outcommented
+            *  Function below!
+            */
             \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
                 'SIMONKOEHLER.Slug',
                 'site',
@@ -33,8 +36,9 @@ call_user_func(
                     'labels' => 'LLL:EXT:slug/Resources/Private/Language/locallang_slugs.xlf',
                 ]
             );
-            */
 
+            /*
+            * Prepared code for upcoming TYPO3 version 11!
             \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
                 'Slug',
                 'site',
