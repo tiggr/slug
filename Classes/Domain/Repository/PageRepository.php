@@ -72,8 +72,8 @@ class PageRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
         while ($row = $statement->fetch()) {
 
-            $row['flag'] = $this->getFlagIconByLanguageUid($row['sys_language_uid']);
-            $row['isocode'] = $this->getIsoCodeByLanguageUid($row['sys_language_uid']);
+            $row['flag'] = $this->getLanguageValue('flag',$row['sys_language_uid']);
+            $row['isocode'] = $this->getLanguageValue('language_isocode',$row['sys_language_uid']);
 
             // If page is a translated page, set l10n_parent as PageUid
             if($row['l10n_parent'] > 0){
@@ -114,36 +114,24 @@ class PageRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         return $output;
     }
 
-
-    private function getFlagIconByLanguageUid($sys_language_uid) {
-        foreach ($this->languages as $value) {
-            if($value['uid'] === $sys_language_uid){
-                $output = $value['flag'];
+    function getLanguageValue($field,$uid){
+        foreach ($this->languages as $language) {
+            if($language['uid'] === $uid){
+                $output = $language[$field];
                 break;
             }
-            elseif($sys_language_uid === 0){
-                $output = 'multiple';
-                break;
-            }
-        }
-        return $output;
-    }
-
-
-    private function getIsoCodeByLanguageUid($sys_language_uid) {
-        foreach ($this->languages as $value) {
-            if($value['uid'] === $sys_language_uid){
-                $output = $value['language_isocode'];
-                break;
-            }
-            elseif($sys_language_uid === 0){
-                $output = '';
+            elseif($uid === 0){
+                if($field === 'flag'){
+                    $output = 'multiple';
+                }
+                else{
+                    $output = '';
+                }
                 break;
             }
         }
         return $output;
     }
-
 
     public function getLanguages(){
         $queryBuilder = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Database\ConnectionPool::class)->getQueryBuilderForTable('sys_language');
