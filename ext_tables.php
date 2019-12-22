@@ -54,6 +54,7 @@ call_user_func(
                     'labels' => 'LLL:EXT:slug/Resources/Private/Language/locallang_slugs.xlf',
                 ]
             );
+            */
 
 
         }
