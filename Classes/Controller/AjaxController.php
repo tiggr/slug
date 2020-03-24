@@ -151,7 +151,7 @@ class AjaxController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
             )
             ->execute();
         while ($row = $statement->fetch()) {
-            $slugGenerated = $slugHelper->sanitize($row[$titleField]);
+            $slugGenerated = $slugHelper->generate($row, $row['pid']);
             break;
         }
 
